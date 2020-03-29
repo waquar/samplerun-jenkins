@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 45.652 s <<< FAILURE! - in TestSuite
+loginfail(urllogin.LoginTest)  Time elapsed: 11.273 s  <<< FAILURE!
+java.lang.AssertionError: expected [Home | Let's Kode It] but found [Let's Kode It]
+	at urllogin.LoginTest.loginfail(LoginTest.java:41)
+
