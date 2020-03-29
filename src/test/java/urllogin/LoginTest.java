@@ -34,17 +34,7 @@ public class LoginTest {
         driver.findElement(By.name("commit")).click();
         Thread.sleep(4000);
     }
-    @Test
-    public void loginfail() throws InterruptedException {
-        driver.get("https://learn.letskodeit.com/");
-        Thread.sleep(10000);
-        Assert.assertEquals(driver.getTitle(),"Home | Let's Kode It");
-        driver.findElement(By.linkText("Login")).click();
-        driver.findElement(By.id("user_email")).sendKeys("test@wrongemail.com");
-        driver.findElement(By.id("user_password")).sendKeys("abcabc");
-        driver.findElement(By.name("commit")).click();
-        Thread.sleep(4000);
-    }
+    
     
     @AfterTest
     public void aftertest(){
