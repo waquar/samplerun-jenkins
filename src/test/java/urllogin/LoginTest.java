@@ -46,7 +46,7 @@ public class LoginTest {
         }
         else{
             System.out.println("log in not successful");
-            System.out.println("h");
+          
             driver.quit();
         }
     }
