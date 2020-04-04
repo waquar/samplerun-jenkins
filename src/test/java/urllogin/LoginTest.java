@@ -10,7 +10,6 @@ import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
-
 public class LoginTest {
 	WebDriver driver;
 	
@@ -25,30 +24,29 @@ public class LoginTest {
     
     @Test
     public void login() throws InterruptedException {
-        driver.get("https://learn.letskodeit.com/");
+        driver.get("http://automationpractice.com/index.php");
         Thread.sleep(10000);
-        Assert.assertEquals(driver.getTitle(),"Home | Let's Kode It");
-        driver.findElement(By.linkText("Login")).click();
-        driver.findElement(By.id("user_email")).sendKeys("test@email.com");
-        driver.findElement(By.id("user_password")).sendKeys("abcabc");
-        driver.findElement(By.name("commit")).click();
+        Assert.assertEquals(driver.getTitle(),"My Store");
+        driver.findElement(By.linkText("Login")).click();                     //  //*[@class='login']
+        driver.findElement(By.id("user_email")).sendKeys("abc@email.com");   //  //input[@id='email']
+        driver.findElement(By.id("user_password")).sendKeys("gora12");        // //input[@id='passwd']
+        driver.findElement(By.name("commit")).click();						  // //*[@class='icon-lock left']
         Thread.sleep(4000);
     }
     
     
     @AfterTest
     public void aftertest(){
-        WebElement icon = driver.findElement(By.className("gravatar"));
+        WebElement icon = driver.findElement(By.className("gravatar"));     //     //*[@class='logout']
         if (icon != null) {
-            driver.findElement(By.className("gravatar")).click();
+            driver.findElement(By.className("gravatar")).click();            //     
             driver.findElement(By.linkText("Log Out"));
+            Assert.assertEquals(driver.getTitle(),"Login - My Store");
             driver.quit();
         }
         else{
-            System.out.println("log in not successful");
-          
+            System.out.println("log in not successful");       
             driver.quit();
         }
     }
-
 }
